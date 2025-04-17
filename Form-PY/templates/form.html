@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #4a739d;
+            color: #333;
+        }
+        .container {
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 30px;
+            background: rgb(44, 40, 59);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            text-align: center;
+            color: #007bff;
+        }
+        .section {
+            margin-top: 20px;
+        }
+        .mentor-card {
+            background: #e9ecef;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            text-align: center;
+            font-display: swap;
+        }
+        .mentor-card img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #ced4da;
+        }
+        input, select, textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 15px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+        button {
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+            font-size: 22px;
+        }
+        .social-icons a {
+            color: #00307c;
+            transition: 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #007bff;
+        }
+        .qr-code {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .qr-code img {
+            width: 180px;
+            margin-top: 10px;
+        }
+        .why-section, .benefits-section, .learning-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+
+        <h1 style="font-size: 30px; color: #d4d8d7;">🚀 Register for Web Development in 18 Days</h1>
+
+        <div class="why-section">
+            <h3>📌 Why Fill This Form?</h3>
+            <p>This form helps us know you better and get you enrolled in an amazing web development journey for just ₹99.</p>
+        </div>
+
+        <div class="benefits-section">
+            <h3>🎁 Benefits You’ll Receive:</h3>
+            <ul>
+                <li>18 Days of Powerful Web Development Training</li>
+                <li>Learn Full Stack + AI-Integrated Web Building</li>
+                <li>Live Projects & Real-World Examples</li>
+                <li>Access to WhatsApp Group for Updates</li>
+                <li>Mentorship from Industry Expert</li>
+                <li>Certificate After Completion</li>
+            </ul>
+        </div>
+
+        <div class="learning-section">
+            <h3>📚 What Will You Learn?</h3>
+            <ul>
+                <li>Frontend + Backend Full Stack Development</li>
+                <li>Build Websites in Minutes Using AI Tools</li>
+                <li>Develop Modern, Responsive Websites</li>
+                <li>Start from Scratch & Reach Advanced Level</li>
+            </ul>
+        </div>
+
+        <form action="/submit" method="POST" enctype="multipart/form-data" class="section">
+            <label>Full Name</label>
+            <input type="text" name="first_name" required>
+
+            <label>Email Id</label>
+            <input type="email" name="email" required>
+
+            <label>Contact Number</label>
+            <input type="text" name="contact_number" required>
+
+            <label>How did you hear about us?</label>
+            <select name="source" required>
+                <option value="From a Friend">From a Friend</option>
+                <option value="Online Source">Online Source</option>
+                <option value="Directly from Mentor">Directly from Mentor</option>
+                <option value="Others">Others</option>
+            </select>
+
+            <label>Why do you want to join this session?</label>
+            <textarea name="reason" rows="3" required></textarea>
+
+            <label>Upload Payment Screenshot (₹99 only)</label>
+            <input type="file" name="payment_screenshot" required>
+
+            <div class="qr-code">
+                <p style="color: #b1bdb8;">Scan QR to Pay ₹99:</p>
+                <img src="{{ url_for('static', filename='images/qr.png') }}" alt="QR Code">
+            </div>
+            <br>
+
+            <button type="submit">Submit & Start Web Journey</button>
+        </form>
+
+        <div class="mentor-card">
+            <img src="https://media-hosting.imagekit.io/c09687a695614552/my%20photo.jpeg?Expires=1839252759&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=AENHoB4Fup~vZp2O8xZ0n4~ENimto9yoVn~xu49W5HsXoItNqAYH2~GqumKPUZuYjB5auowLX0HHEnCMVc8ErzQ7fVSLQ6RhjsChnWZiPwb1Rieio4KwrI77M9ENImYYpywzoHBHqqr2MHFrYx2fNN5~GjCkQgqKTAH4B9kvHOAleMSG5T9lwkcGzWLb6nvpTo~dSfq7mLMiMllYz~jvspy16IfaHYrykse3UEbTP6ji8XqdI2XaJW7x7dJ8Yr0vKwHVgAQnCTvdYFFfsm1K1teTgem-9NsCpkxtievoAHuvpwpE8LBomkx9Spa2WA3-BaUvNVnzdjHkWazNf6PfJw__" alt="Mentor Photo">
+            <h2 style="color: #333;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Mentor</h2>
+            <h2 style="font-family: 'Times New Roman', Times, serif;">Laxmi Nivas Morishetty</h2>
+            <h3 style="color: brown;">Education | Innovation | Entrepreneurship</h3>
+            <p>Passionate about teaching, AI, and building powerful digital products.</p>
+            <div class="social-icons">
+                <a href="https://laxminivas-self-porfolio.vercel.app/" title="Website" target="_blank"><i class="fas fa-globe"></i></a>
+                <a href="https://in.linkedin.com/in/laxmi-nivas-morishetty-02468m" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/laxminivas06" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/laxminivasmorishetty/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:morishettylaxminivas@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
